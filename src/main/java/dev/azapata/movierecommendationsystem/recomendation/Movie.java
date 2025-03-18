@@ -1,29 +1,30 @@
 package dev.azapata.movierecommendationsystem.recomendation;
 
-import org.springframework.data.neo4j.core.schema.Id;
-import org.springframework.data.neo4j.core.schema.Node;
-import org.springframework.data.neo4j.core.schema.Property;
-import org.springframework.data.neo4j.core.schema.Relationship;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.springframework.data.neo4j.core.schema.*;
 
 import java.util.List;
 
-@Node("Book")
+
+@Node
+@AllArgsConstructor
+@Getter
 public class Movie {
 
     @Id
-    private String id;
-    
-    @Property("title")
     private String title;
 
-    @Property("year")
-    private Integer year;
+    @Property("released")
+    private Integer released;
+
+    @Relationship(type = "DIRECTED_BY", direction = Relationship.Direction.INCOMING)
+    private Person director;
 
     @Relationship(type = "ACTED_IN", direction = Relationship.Direction.INCOMING)
-    private List<Actor> actors;
+    private List<Person> actors;
 
     @Relationship(type = "HAS_GENRE", direction = Relationship.Direction.OUTGOING)
     private List<Genre> genres;
-
 
 }

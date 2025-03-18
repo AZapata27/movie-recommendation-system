@@ -6,11 +6,12 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 
 @Node
-@AllArgsConstructor
 @Getter
-public class Genre {
+@AllArgsConstructor
+public class Person {
 
     @Id
-    private String name;
+    private final String name;
 
 }
+
