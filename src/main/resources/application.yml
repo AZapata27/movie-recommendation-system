@@ -1,3 +1,8 @@
 spring:
   application:
     name: movie-recommendation-system
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+     username: neo4j
+     password: notverysecret
