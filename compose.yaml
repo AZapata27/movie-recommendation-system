@@ -1,0 +1,11 @@
+services:
+  neo4j:
+    image: 'neo4j:latest'
+    environment:
+      - 'NEO4J_AUTH=neo4j/notverysecret'
+    ports:
+      - '7687:7687'
+  zipkin:
+    image: 'openzipkin/zipkin:latest'
+    ports:
+      - '9411:9411'
