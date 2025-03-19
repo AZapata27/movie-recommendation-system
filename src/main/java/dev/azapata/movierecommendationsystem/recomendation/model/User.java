@@ -14,7 +14,7 @@ public class User {
     @Id
     private String name;
 
-    @Relationship(type = "VOTED")
+    @Relationship(type = "RATED")
     private List<Rating> ratings;
 
     public User(String name) {

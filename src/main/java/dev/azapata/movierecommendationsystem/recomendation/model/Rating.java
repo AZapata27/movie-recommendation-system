@@ -13,7 +13,7 @@ public class Rating {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Long ratingId;
 
     @Property
     private Integer ratingValue;
