@@ -1,0 +1,201 @@
+
+###
+GET http://localhost:8080/api/v1/movies
+
+
+###
+POST http://localhost:8080/api/v1/movies/rate
+Content-Type: application/json
+
+{
+  "movieTitle": "The Matrix",
+  "ratingValue": 2,
+  "userName": "Valentina Fernandez"
+}
+
+###
+
+POST http://localhost:8080/api/v1/movies/rate
+Content-Type: application/json
+
+{
+  "movieTitle": "The Matrix",
+  "ratingValue": 2,
+  "userName": "Valentina Fernandez"
+}
+
+###
+
+POST http://localhost:8080/api/v1/movies/rate
+Content-Type: application/json
+
+{
+  "movieTitle": "Inception",
+  "ratingValue": 5,
+  "userName": "Andres Zapata"
+}
+
+###
+
+POST http://localhost:8080/api/v1/movies/rate
+Content-Type: application/json
+
+{
+  "movieTitle": "Inception",
+  "ratingValue": 4,
+  "userName": "Valentina Fernandez"
+}
+
+###
+POST http://localhost:8080/api/v1/movies
+Content-Type: application/json
+
+{
+  "title": "The Matrix",
+  "released": 1999,
+  "director": [{ "name": "The Wachowskis"}],
+  "actors": [
+    {
+      "name": "Keanu Reeves",
+      "role": "Neo"
+    },
+    {
+      "name": "Carrie-Anne Moss",
+      "role": "Trinity"
+    },
+    {
+      "name": "Laurence Fishburne",
+      "role": "Morpheus"
+    },
+    {
+      "name": "Hugo Weaving",
+      "role": "Agent Smith"
+    }
+  ],
+  "genres": [
+    {
+      "name": "Action"
+    },
+    {
+      "name": "Sci-Fi"
+    }
+  ]
+}
+
+
+###
+POST http://localhost:8080/api/v1/movies
+Content-Type: application/json
+
+{
+  "title": "Inception",
+  "released": 2010,
+  "director": [
+    {
+      "name": "Christopher Nolan"
+    }
+  ],
+  "actors": [
+    {
+      "name": "Leonardo DiCaprio",
+      "role": "Cobb"
+    },
+    {
+      "name": "Joseph Gordon-Levitt",
+      "role": "Arthur"
+    },
+    {
+      "name": "Elliot Page",
+      "role": "Ariadne"
+    },
+    {
+      "name": "Tom Hardy",
+      "role": "Eames"
+    },
+    {
+      "name": "Ken Watanabe",
+      "role": "Saito"
+    },
+    {
+      "name": "Cillian Murphy",
+      "role": "Robert Fischer"
+    },
+    {
+      "name": "Marion Cotillard",
+      "role": "Mal"
+    },
+    {
+      "name": "Michael Caine",
+      "role": "Professor Stephen Miles"
+    }
+  ],
+  "genres": [
+    {
+      "name": "Action"
+    },
+    {
+      "name": "Adventure"
+    },
+    {
+      "name": "Sci-Fi"
+    },
+    {
+      "name": "Thriller"
+    }
+  ]
+}
+
+###
+POST http://localhost:8080/api/v1/movies
+Content-Type: application/json
+
+{
+  "title": "Interstellar",
+  "released": 2014,
+  "director": [
+    {
+      "name": "Christopher Nolan"
+    }
+  ],
+  "actors": [
+    {
+      "name": "Matthew McConaughey",
+      "role": "Cooper"
+    },
+    {
+      "name": "Anne Hathaway",
+      "role": "Brand"
+    },
+    {
+      "name": "Jessica Chastain",
+      "role": "Murph"
+    },
+    {
+      "name": "Mackenzie Foy",
+      "role": "Murph joven"
+    },
+    {
+      "name": "Michael Caine",
+      "role": "Profesor Brand"
+    },
+    {
+      "name": "Casey Affleck",
+      "role": "Tom"
+    },
+    {
+      "name": "Matt Damon",
+      "role": "Dr. Mann"
+    }
+  ],
+  "genres": [
+    {
+      "name": "Adventure"
+    },
+    {
+      "name": "Drama"
+    },
+    {
+      "name": "Sci-Fi"
+    }
+  ]
+}

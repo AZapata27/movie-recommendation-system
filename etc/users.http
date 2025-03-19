@@ -1,0 +1,16 @@
+
+###
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Andres Zapata"
+}
+
+###
+POST http://localhost:8080/api/v1/users
+Content-Type: application/json
+
+{
+  "name": "Valentina Fernandez"
+}

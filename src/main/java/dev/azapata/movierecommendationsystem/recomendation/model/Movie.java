@@ -1,4 +1,4 @@
-package dev.azapata.movierecommendationsystem.recomendation;
+package dev.azapata.movierecommendationsystem.recomendation.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,8 +8,8 @@ import java.util.List;
 
 
 @Node
-@AllArgsConstructor
 @Getter
+@AllArgsConstructor
 public class Movie {
 
     @Id
@@ -18,13 +18,13 @@ public class Movie {
     @Property("released")
     private Integer released;
 
-    @Relationship(type = "DIRECTED_BY", direction = Relationship.Direction.INCOMING)
-    private Person director;
+    @Relationship(type = "DIRECTED", direction = Relationship.Direction.INCOMING)
+    private List<Person> directors;
 
     @Relationship(type = "ACTED_IN", direction = Relationship.Direction.INCOMING)
     private List<Person> actors;
 
-    @Relationship(type = "HAS_GENRE", direction = Relationship.Direction.OUTGOING)
+    @Relationship(type = "HAS_GENRE")
     private List<Genre> genres;
 
 }
