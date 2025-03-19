@@ -1,4 +1,4 @@
-package dev.azapata.movierecommendationsystem.recomendation.dto.request;
+package dev.azapata.movierecommendationsystem.recomendation.model.dto;
 
 public record MovieRatingRequest(
             String userName,

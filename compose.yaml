@@ -6,7 +6,3 @@ services:
     ports:
       - '7474:7474'
       - '7687:7687'
-  zipkin:
-    image: 'openzipkin/zipkin:latest'
-    ports:
-      - '9411:9411'

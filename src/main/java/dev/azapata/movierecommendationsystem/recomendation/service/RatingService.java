@@ -1,12 +1,12 @@
 package dev.azapata.movierecommendationsystem.recomendation.service;
 
 
-import dev.azapata.movierecommendationsystem.recomendation.dto.request.MovieRatingRequest;
+import dev.azapata.movierecommendationsystem.recomendation.model.dto.MovieRatingRequest;
 import dev.azapata.movierecommendationsystem.recomendation.exception.BadRequestException;
 import dev.azapata.movierecommendationsystem.recomendation.exception.NotFoundException;
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
-import dev.azapata.movierecommendationsystem.recomendation.model.Rating;
-import dev.azapata.movierecommendationsystem.recomendation.model.User;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Rating;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.User;
 import dev.azapata.movierecommendationsystem.recomendation.repository.MovieRepository;
 import dev.azapata.movierecommendationsystem.recomendation.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

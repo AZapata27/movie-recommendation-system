@@ -1,6 +1,6 @@
 package dev.azapata.movierecommendationsystem.recomendation.controller;
 
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
 import dev.azapata.movierecommendationsystem.recomendation.service.RecommendationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

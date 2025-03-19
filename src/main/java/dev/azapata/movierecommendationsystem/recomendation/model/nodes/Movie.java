@@ -1,4 +1,4 @@
-package dev.azapata.movierecommendationsystem.recomendation.model;
+package dev.azapata.movierecommendationsystem.recomendation.model.nodes;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,11 +1,9 @@
 package dev.azapata.movierecommendationsystem.recomendation.service;
 
 import dev.azapata.movierecommendationsystem.recomendation.exception.NotFoundException;
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
 import dev.azapata.movierecommendationsystem.recomendation.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 

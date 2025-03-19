@@ -1,17 +1,15 @@
 package dev.azapata.movierecommendationsystem.recomendation.controller;
 
-import dev.azapata.movierecommendationsystem.recomendation.dto.request.MovieRatingRequest;
-import dev.azapata.movierecommendationsystem.recomendation.dto.request.MovieRequest;
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.dto.MovieRatingRequest;
+import dev.azapata.movierecommendationsystem.recomendation.model.dto.MovieRequest;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
 import dev.azapata.movierecommendationsystem.recomendation.service.MovieService;
 import dev.azapata.movierecommendationsystem.recomendation.service.RatingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/movies")

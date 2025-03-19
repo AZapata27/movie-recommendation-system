@@ -1,6 +1,6 @@
 package dev.azapata.movierecommendationsystem.recomendation.repository;
 
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 import org.springframework.data.neo4j.repository.query.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,6 +1,6 @@
 package dev.azapata.movierecommendationsystem.recomendation.service;
 
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
 import dev.azapata.movierecommendationsystem.recomendation.repository.MovieRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
-package dev.azapata.movierecommendationsystem.recomendation.dto.request;
+package dev.azapata.movierecommendationsystem.recomendation.model.dto;
 
-import dev.azapata.movierecommendationsystem.recomendation.model.Genre;
-import dev.azapata.movierecommendationsystem.recomendation.model.Movie;
-import dev.azapata.movierecommendationsystem.recomendation.model.Person;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Genre;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Movie;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.Person;
 
 import java.util.List;
 

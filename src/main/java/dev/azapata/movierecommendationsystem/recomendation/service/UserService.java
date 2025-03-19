@@ -1,8 +1,8 @@
 package dev.azapata.movierecommendationsystem.recomendation.service;
 
-import dev.azapata.movierecommendationsystem.recomendation.dto.request.UserRequest;
+import dev.azapata.movierecommendationsystem.recomendation.model.dto.UserRequest;
 import dev.azapata.movierecommendationsystem.recomendation.exception.ConflictException;
-import dev.azapata.movierecommendationsystem.recomendation.model.User;
+import dev.azapata.movierecommendationsystem.recomendation.model.nodes.User;
 import dev.azapata.movierecommendationsystem.recomendation.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
