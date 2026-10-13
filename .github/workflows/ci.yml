@@ -5,23 +5,33 @@ on:
     branches: [master]
   pull_request:
 
-permissions:
-  contents: read
+permissions: {}
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+    uses: AZapata27/reusable-workflows/.github/workflows/java-gradle.yml@dd1bf38000c4f44c4939abe2ce0da8e1fac11993 # v1.0.0
+    permissions:
+      contents: read
+    with:
+      java-version: '21'
+      gradle-args: build
+      timeout-minutes: 30
 
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 21
+  workflow-lint:
+    uses: AZapata27/reusable-workflows/.github/workflows/workflow-lint.yml@dd1bf38000c4f44c4939abe2ce0da8e1fac11993 # v1.0.0
+    permissions:
+      contents: read
 
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-
-      - name: Build and test
-        run: ./gradlew build
+  security:
+    uses: AZapata27/reusable-workflows/.github/workflows/security.yml@dd1bf38000c4f44c4939abe2ce0da8e1fac11993 # v1.0.0
+    permissions:
+      contents: read
+      actions: read            # CodeQL (required by the called workflow's permission ceiling)
+      security-events: write   # CodeQL SARIF upload
+    with:
+      codeql-languages: '["java-kotlin", "actions"]'
+      codeql-build-mode: none
