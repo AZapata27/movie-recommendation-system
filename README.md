@@ -1,5 +1,5 @@
 #  Movie Recommendation System (Spring + Neo4j)
-[![CI](https://github.com/AZapata27/movie-recommendation-system/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/AZapata27/movie-recommendation-system/actions/workflows/ci.yml)
+[![CI](https://github.com/AZapata27/movie-recommendation-system/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/AZapata27/movie-recommendation-system/actions/workflows/ci.yml) [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/AZapata27/movie-recommendation-system/badge)](https://scorecard.dev/viewer/?uri=github.com/AZapata27/movie-recommendation-system)
 
 A user-friendly and efficient platform that enables users to search movies, submit ratings, and receive personalized movie recommendations leveraging Neo4j graph database.
 
