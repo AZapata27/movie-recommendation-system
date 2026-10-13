@@ -62,6 +62,24 @@ class RatingServiceTest {
     }
 
     @Test
+    void addsFirstRatingForUserBuiltWithConstructor() {
+        User bob = new User("bob");
+        Movie inception = movie("Inception");
+        when(userRepository.findById("bob")).thenReturn(Optional.of(bob));
+        when(movieRepository.findByTitle("Inception")).thenReturn(Optional.of(inception));
+
+        ratingService.rateMovie(new MovieRatingRequest("bob", "Inception", 4));
+
+        verify(userRepository).save(bob);
+        assertThat(bob.getRatings())
+                .singleElement()
+                .satisfies(rating -> {
+                    assertThat(rating.getMovie()).isSameAs(inception);
+                    assertThat(rating.getRatingValue()).isEqualTo(4);
+                });
+    }
+
+    @Test
     void updatesExistingRatingInsteadOfDuplicatingIt() {
         Rating existing = new Rating(42L, 2, movie("Inception"));
         Rating other = new Rating(43L, 4, movie("Interstellar"));
