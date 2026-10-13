@@ -5,6 +5,7 @@ import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Relationship;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Node
@@ -15,7 +16,7 @@ public class User {
     private String name;
 
     @Relationship(type = "RATED")
-    private List<Rating> ratings;
+    private List<Rating> ratings = new ArrayList<>();
 
     public User(String name) {
         this.name = name;
