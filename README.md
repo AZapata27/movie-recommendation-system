@@ -1,4 +1,6 @@
 #  Movie Recommendation System (Spring + Neo4j)
+[![CI](https://github.com/AZapata27/movie-recommendation-system/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/AZapata27/movie-recommendation-system/actions/workflows/ci.yml)
+
 A user-friendly and efficient platform that enables users to search movies, submit ratings, and receive personalized movie recommendations leveraging Neo4j graph database.
 
 ##  Project Description
@@ -11,11 +13,72 @@ This project implements a movie recommendation system powered by Neo4j, a graph 
 - **Intuitive Data Model**: Clearly defined models that ease integration with any frontend application.
 
 ##  Technology Stack
-- **Java 17+**
+- **Java 21**
 - **Spring Boot** – Main framework for agile, clean, and maintainable code.
 - **Spring Data Neo4j** – Seamless integration and object-graph mapping.
 - **Neo4j** – Powerful and flexible graph database for relationship management.
 - **Lombok** – Reducing boilerplate Java code effectively.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    client([HTTP client]) --> controllers
+
+    subgraph controllers [REST controllers - /api/v1]
+        MC[MovieController<br/>/movies, /movies/rate]
+        UC[UserController<br/>/users]
+        RC[RecommendationController<br/>/recommendations]
+    end
+
+    subgraph services [Services]
+        MS[MovieService]
+        RS[RatingService]
+        US[UserService]
+        RecS[RecommendationService]
+    end
+
+    subgraph repositories [Spring Data Neo4j repositories]
+        MR[MovieRepository<br/>custom Cypher queries]
+        UR[UserRepository]
+    end
+
+    MC --> MS
+    MC --> RS
+    UC --> US
+    RC --> RecS
+    MS --> MR
+    RS --> MR
+    RS --> UR
+    US --> UR
+    RecS --> MR
+    MR --> DB[(Neo4j)]
+    UR --> DB
+```
+
+Errors raised by the services (`NotFoundException`, `ConflictException`, `BadRequestException`) are translated to
+RFC 7807 `ProblemDetail` responses (404 / 409 / 400) by `ExceptionControllerAdvice`.
+
+### Graph model
+
+```mermaid
+graph LR
+    U((User)) -- "RATED {ratingValue}" --> M((Movie))
+    P((Person)) -- DIRECTED --> M
+    P -- ACTED_IN --> M
+    M -- HAS_GENRE --> G((Genre))
+```
+
+## Testing
+
+```sh
+./gradlew build
+```
+
+- Unit tests for the services with Mockito-mocked repositories (validation, not-found/conflict paths, rating create/update, recommendation delegation).
+- Web layer tests with `@WebMvcTest` for every controller, including the `ProblemDetail` error mapping.
+- A Spring Modulith structure check.
+- `MovieRecommendationSystemApplicationTests` boots the full context against a Neo4j Testcontainer; it is skipped automatically when no Docker daemon is available and runs in CI.
 
 ##  Project Structure
 ```
